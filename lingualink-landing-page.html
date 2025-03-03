@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LinguaLink – Work as an Interpreter on Your Terms</title>
+    <style>
+        :root {
+            --primary: #4A6FDC;
+            --secondary: #1E2A78;
+            --accent: #64D9DB;
+            --light: #F5F7FF;
+            --dark: #1A1A2E;
+            --success: #4CAF50;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            color: var(--dark);
+            line-height: 1.6;
+            background-color: var(--light);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        header {
+            background-color: var(--primary);
+            color: white;
+            padding: 20px 0;
+        }
+        
+        .logo {
+            font-size: 2.5rem;
+            font-weight: bold;
+        }
+        
+        .logo span {
+            color: var(--accent);
+        }
+        
+        .hero {
+            padding: 60px 0;
+            text-align: center;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+            color: white;
+        }
+        
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto 30px;
+        }
+        
+        .problem {
+            padding: 50px 0;
+            background-color: white;
+        }
+        
+        .problem h2 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: var(--secondary);
+        }
+        
+        .problem-list {
+            max-width: 800px;
+            margin: 0 auto;
+            padding-left: 20px;
+        }
+        
+        .problem-list li {
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+        }
+        
+        .solution {
+            padding: 60px 0;
+            background-color: var(--light);
+        }
+        
+        .solution h2 {
+            text-align: center;
+            margin-bottom: 40px;
+            color: var(--secondary);
+        }
+        
+        .benefits {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+        
+        .benefit-card {
+            background-color: white;
+            border-radius: 8px;
+            padding: 25px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            flex: 1 1 300px;
+            max-width: 350px;
+        }
+        
+        .benefit-card h3 {
+            display: flex;
+            align-items: center;
+            color: var(--secondary);
+            margin-bottom: 15px;
+        }
+        
+        .benefit-card h3::before {
+            content: "✅";
+            margin-right: 10px;
+            font-size: 1.2rem;
+        }
+        
+        .how-it-works {
+            padding: 60px 0;
+            background-color: white;
+        }
+        
+        .how-it-works h2 {
+            text-align: center;
+            margin-bottom: 40px;
+            color: var(--secondary);
+        }
+        
+        .steps {
+            max-width: 800px;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            gap: 30px;
+        }
+        
+        .step {
+            flex: 1 1 240px;
+            text-align: center;
+            padding: 20px;
+            background-color: var(--light);
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+        
+        .step-number {
+            display: inline-block;
+            width: 50px;
+            height: 50px;
+            line-height: 50px;
+            text-align: center;
+            background-color: var(--primary);
+            color: white;
+            border-radius: 50%;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+        
+        .cta {
+            text-align: center;
+            padding: 40px 0;
+            background-color: var(--light);
+        }
+        
+        .cta h2 {
+            color: var(--secondary);
+            margin-bottom: 20px;
+        }
+        
+        .cta p {
+            max-width: 700px;
+            margin: 0 auto 30px;
+            font-size: 1.1rem;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--primary);
+            color: white;
+            text-decoration: none;
+            padding: 15px 30px;
+            border-radius: 30px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(74, 111, 220, 0.3);
+        }
+        
+        .btn:hover {
+            background-color: var(--secondary);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(74, 111, 220, 0.4);
+        }
+        
+        .btn-large {
+            padding: 18px 35px;
+            font-size: 1.2rem;
+        }
+        
+        footer {
+            background-color: var(--secondary);
+            color: white;
+            padding: 30px 0;
+            text-align: center;
+        }
+        
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .benefit-card {
+                flex: 1 1 100%;
+            }
+            
+            .steps {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .step {
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">Lingua<span>Link</span></div>
+        </div>
+    </header>
+    
+    <section class="hero">
+        <div class="container">
+            <h1>Work as an Interpreter on Your Terms</h1>
+            <p>Connect directly with clients, set your own rates, and take control of your career.</p>
+            <a href="#waitlist" class="btn btn-large">Join the Waitlist</a>
+        </div>
+    </section>
+    
+    <section class="problem">
+        <div class="container">
+            <h2>Tired of Low Pay, Unreliable Jobs, and Middlemen Taking a Cut?</h2>
+            <p style="text-align: center; margin-bottom: 30px;">Interpreting should be <strong>fair, flexible, and rewarding</strong>—but right now, it's not.</p>
+            <ul class="problem-list">
+                <li><strong>Agencies take huge commissions, leaving you with less.</strong></li>
+                <li><strong>Unclear job conditions and last-minute cancellations waste your time.</strong></li>
+                <li><strong>Finding consistent, well-paid work is a struggle.</strong></li>
+            </ul>
+            <p style="text-align: center; margin-top: 30px; font-weight: bold; font-size: 1.2rem; color: var(--primary);">We're changing that.</p>
+        </div>
+    </section>
+    
+    <section class="solution">
+        <div class="container">
+            <h2>Introducing LinguaLink – A Smarter Way to Work as an Interpreter</h2>
+            <p style="text-align: center; margin-bottom: 40px;">LinguaLink is a <strong>new marketplace</strong> that connects interpreters directly with businesses and organizations that need their skills—<strong>without unfair commissions or delays</strong>.</p>
+            
+            <div class="benefits">
+                <div class="benefit-card">
+                    <h3>Keep More of What You Earn</h3>
+                    <p>No middlemen taking excessive cuts. Set your rates and receive the compensation you deserve.</p>
+                </div>
+                <div class="benefit-card">
+                    <h3>Clear, Reliable Job Offers</h3>
+                    <p>Know your rate, job details, and client in advance. No more surprises or last-minute cancellations.</p>
+                </div>
+                <div class="benefit-card">
+                    <h3>Work When & Where You Want</h3>
+                    <p>Choose your jobs and stay in control of your schedule. Remote or in-person - it's your decision.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="cta" id="waitlist">
+        <div class="container">
+            <h2>Join the First Wave of Interpreters on LinguaLink</h2>
+            <p>We're launching soon, and early sign-ups will get priority access to job opportunities.</p>
+            <a href="#" class="btn btn-large">Join the Waitlist</a>
+        </div>
+    </section>
+    
+    <section class="how-it-works">
+        <div class="container">
+            <h2>How It Works</h2>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>Sign Up</h3>
+                    <p>Join the waitlist now to secure your spot when we launch.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>Skill Verification</h3>
+                    <p>Take a short test when we launch to qualify for jobs.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>Start Earning</h3>
+                    <p>Get matched with clients who need your expertise.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section class="cta">
+        <div class="container">
+            <h2>Be Part of the Change</h2>
+            <p>LinguaLink is built for interpreters, by people who understand the industry's challenges. <strong>Join now and help shape the future of fair, flexible interpretation work.</strong></p>
+            <a href="#" class="btn btn-large">Join the Waitlist</a>
+        </div>
+    </section>
+    
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 LinguaLink. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
